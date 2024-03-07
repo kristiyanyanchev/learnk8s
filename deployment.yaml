@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-name-deployment
+  labels:
+    app: hello-name
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello-name
+  template:
+    metadata:
+      labels:
+        app: hello-name
+    spec:
+      containers:
+      - name: hello-name
+        image: 
+        ports:
+        - containerPort: 8090
