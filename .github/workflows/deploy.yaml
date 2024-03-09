@@ -18,3 +18,6 @@ jobs:
         uses: google-github-actions/setup-gcloud@v0.3.0
         with:
           credentials_json: ./secrets/gcp_secret.json
+      - name: Download newest image
+        run: |
+          gcloud compute ssh --zone "${{ secrets.GCP_ZONE }}" "master" --project "${{ secrets.GCP_PROJECT }}"  --command "docker pull ${{ secrets.DOCKERHUB_USERNAME }}/open:latest"
