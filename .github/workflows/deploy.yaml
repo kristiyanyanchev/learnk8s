@@ -13,7 +13,7 @@ jobs:
       - name: Decrypt large secret
         run: ./secrets/decrypt_secret.sh
         env:
-          LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
+          GCP_SECRET_PASSPHRASE: ${{ secrets.GCP_SECRET_PASSPHRASE }}
       - name: setup gcloud
         uses: google-github-actions/setup-gcloud@v0.3.0
         with:
