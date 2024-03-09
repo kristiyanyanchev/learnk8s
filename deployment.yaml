@@ -19,3 +19,12 @@ spec:
         image: kristiyanyanchev/open:latest
         ports:
         - containerPort: 8090
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8090
+          initialDelaySeconds: 5
+          periodSeconds: 5
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
