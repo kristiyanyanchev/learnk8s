@@ -1,0 +1,20 @@
+name: 
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  my-job:
+    name: My Job
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decrypt large secret
+        run: ./secrets/decrypt_secret.sh
+        env:
+          LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
+      - name: setup gcloud
+        uses: google-github-actions/setup-gcloud@v0.3.0
+        with:
+          service_account_key: ./secrets/gcp_secret.json
