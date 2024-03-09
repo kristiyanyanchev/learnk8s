@@ -15,7 +15,7 @@ jobs:
         env:
           GCP_SECRET_PASSPHRASE: ${{ secrets.GCP_SECRET_PASSPHRASE }}
       - name: setup gcloud
-        uses: google-github-actions/setup-gcloud@v0.3.0
+        uses: google-github-actions/auth@v2
         with:
           credentials_file_path: ./secrets/gcp_secret.json
       - name: config gcp account
