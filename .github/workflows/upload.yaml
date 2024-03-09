@@ -40,7 +40,7 @@ jobs:
 
       - name: Docker build
         run: 
-          docker build -t kristiyanyanchev/open:latest . 
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/open:latest . 
       - name: Docker Push
         run: 
-          docker push kristiyanyanchev/open:latest
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/open:latest
