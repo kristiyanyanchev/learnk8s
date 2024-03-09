@@ -22,4 +22,4 @@ jobs:
         run: gcloud config set account ${{ secrets.SERVICE_ACCOUNT_EMAIL }}
       - name: Download newest image
         run: |
-          gcloud compute ssh --impersonate-service-account=${{ secrets.SERVICE_ACCOUNT_EMAIL }} --zone "${{ secrets.GCP_ZONE }}" "master" --project "${{ secrets.GCP_PROJECT }}"  --command "docker pull ${{ secrets.DOCKERHUB_USERNAME }}/open:latest"
+          gcloud compute ssh --zone "${{ secrets.GCP_ZONE }}" "master" --project "${{ secrets.GCP_PROJECT }}"  --command "docker pull ${{ secrets.DOCKERHUB_USERNAME }}/open:latest"
