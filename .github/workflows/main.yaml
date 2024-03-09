@@ -34,4 +34,6 @@ jobs:
       - name: Docker build
         run: 
           docker build -t kristiyanyanchev/open:latest . 
-      - name: Docker push
+      - name: Docker Push
+        run: 
+          docker push kristiyanyanchev/open:latest
