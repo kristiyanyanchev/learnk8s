@@ -17,4 +17,4 @@ jobs:
         run: gcloud config set account ${{ secrets.SERVICE_ACCOUNT_EMAIL }}
       - name: Download newest image
         run: |
-          gcloud compute ssh --zone "${{ secrets.GCP_ZONE }}" "master" --project "${{ secrets.GCP_PROJECT }}"  --command "pwd && cd learnk8s && git pull  && kubectl apply -f deployment.yaml --validate=false"
+          gcloud compute ssh --zone "${{ secrets.GCP_ZONE }}" "master" --project "${{ secrets.GCP_PROJECT }}"  --command "echo $KUBECONFIG && cd learnk8s && git pull  && kubectl apply -f deployment.yaml --validate=false"
