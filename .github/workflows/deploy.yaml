@@ -16,4 +16,4 @@ jobs:
 
       - name: Download newest image
         run: |
-          gcloud compute ssh --zone "${{ secrets.GCP_ZONE }}" "master" --project "${{ secrets.GCP_PROJECT }}"  --command "pwd && export KUBECONFIG=$HOME/.kube/config && cd learnk8s && git pull  && kubectl apply -f deployment.yaml --server=${{ secrets.SERVER_URL }} --client-certificate=../default.crt --client-key=../default.key "
+          gcloud compute ssh --zone "${{ secrets.GCP_ZONE }}" "master" --project "${{ secrets.GCP_PROJECT }}"  --command "pwd && export KUBECONFIG=$HOME/.kube/config && cd learnk8s && git pull  && kubectl apply -f deployment.yaml --server=${{ secrets.SERVER_URL }}"
