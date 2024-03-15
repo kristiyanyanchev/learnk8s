@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tesing-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: testing-job
+        image: busybox
+        command: ["curl", "localhost:8090/health"]
+      restartPolicy: Never
