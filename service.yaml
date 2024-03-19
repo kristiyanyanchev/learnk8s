@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: web
+spec:
+  selector:
+    app.kubernetes.io/name: hello-name
+  ports:
+    - protocol: TCP
+      port: 8090
+      targetPort: 8090
